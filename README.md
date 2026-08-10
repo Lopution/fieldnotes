@@ -1,11 +1,26 @@
-# FIELDNOTES
+# FIELDNOTES v1 prototype
 
-人工智能时代的交流观察计划。
+A complete rewrite of the FIELDNOTES website.
 
-这是一个独立观察项目，记录人工智能进入交流系统之后正在出现的新行为、关系与结构。
+## Design direction
 
-方法：
+- Research instrument × quiet interface × living archive
+- Chinese carries the reading flow; English is reserved for terminology and metadata
+- Warm bone / paper surfaces with semantic clay and moss accents
+- A custom visual grammar for Human / AI / Group / System / Evidence
+- Interactive communication-topology specimen in the hero
+- Field Notes are treated as research objects, not blog posts
 
-Observation → Pattern → Interpretation
+## Files
 
-当前版本：v0.2
+- `index.html`
+- `styles.css`
+- `script.js`
+
+## Preview
+
+Open `index.html`, or run a simple static server:
+
+```bash
+python3 -m http.server 8000
+```
