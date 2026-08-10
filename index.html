@@ -3,306 +3,492 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#f2efe6" />
-  <meta name="description" content="FIELDNOTES 是一个持续观察人工智能如何进入交流系统的独立项目。" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#f8f4ec" />
+  <meta name="description" content="FIELDNOTES — 人工智能时代的交流观察计划。" />
   <title>FIELDNOTES — 人工智能时代的交流观察计划</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">跳到正文</a>
 
-  <header class="site-header" id="top">
-    <div class="shell header-grid">
-      <a class="wordmark" href="#top" aria-label="FIELDNOTES 首页">
-        FIELDNOTES
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="FIELDNOTES 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </span>
+        <span>FIELDNOTES</span>
       </a>
 
       <nav class="desktop-nav" aria-label="主导航">
-        <a href="#project">项目</a>
+        <a href="#observe">观察</a>
         <a href="#method">方法</a>
-        <a href="#scope">范围</a>
-        <a href="#fieldnotes">条目</a>
+        <a href="#field-note">条目</a>
+        <a href="#archive">档案</a>
         <a href="#participate">参与</a>
       </nav>
 
+      <div class="header-status" aria-label="项目状态">
+        <span class="status-dot"></span>
+        <span>持续观察中</span>
+      </div>
+
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">
-        目录 <small>MENU</small>
+        <span>目录</span>
+        <span class="menu-icon" aria-hidden="true"></span>
       </button>
     </div>
 
     <nav class="mobile-nav" id="mobile-menu" aria-label="移动端导航" hidden>
-      <a href="#project">项目</a>
+      <a href="#observe">观察</a>
       <a href="#method">方法</a>
-      <a href="#scope">范围</a>
-      <a href="#fieldnotes">条目</a>
+      <a href="#field-note">条目</a>
+      <a href="#archive">档案</a>
       <a href="#participate">参与</a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero shell" aria-labelledby="hero-title">
-      <aside class="hero-meta">
-        <p>FIELDNOTES / 00</p>
-        <p>2026.08 · v0.2</p>
-      </aside>
-
-      <div class="hero-main">
-        <p class="kicker">交流观察</p>
-        <h1 id="hero-title">记录人工智能进入交流之后，<br />正在发生的变化。</h1>
-        <p class="en-subtitle">Communication in the age of AI.</p>
-
-        <div class="hero-intro">
-          <p>
-            FIELDNOTES 关注的不是人工智能“将会”怎样改变交流，
-            而是它已经怎样进入人们真实的表达、理解、协作、关系和社会互动。
+    <section class="hero" id="top">
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">人工智能时代的交流观察计划</p>
+          <h1>人工智能进入交流之后，<br />我们先记录发生了什么。</h1>
+          <p class="hero-deck">
+            FIELDNOTES 持续记录 AI 如何进入真实的表达、理解、协作与关系。
+            从一个具体的交流事件开始，留下证据，寻找重复出现的结构，再讨论它可能意味着什么。
           </p>
-          <p>
-            我们把具体发生的交流事件作为起点：先留下证据，再寻找重复出现的结构，
-            最后才讨论这些变化可能意味着什么。
-          </p>
+
+          <div class="hero-actions">
+            <a class="text-link" href="#field-note">
+              <span>查看记录结构</span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"/></svg>
+            </a>
+            <a class="quiet-link" href="#method">方法说明</a>
+          </div>
         </div>
 
-        <div class="hero-rule">
-          <span>OBSERVATION</span>
-          <i aria-hidden="true"></i>
-          <span>PATTERN</span>
-          <i aria-hidden="true"></i>
-          <span>INTERPRETATION</span>
+        <div class="specimen-card" aria-labelledby="specimen-title">
+          <header class="specimen-header">
+            <div>
+              <p class="mono-label">TOPOLOGY</p>
+              <h2 id="specimen-title">交流结构</h2>
+            </div>
+            <span class="working-chip">工作记号</span>
+          </header>
+
+          <div class="specimen-tabs" role="group" aria-label="选择交流结构">
+            <button type="button" data-mode="direct" aria-pressed="true">直接</button>
+            <button type="button" data-mode="mediated" aria-pressed="false">中介</button>
+            <button type="button" data-mode="agentic" aria-pressed="false">代理</button>
+            <button type="button" data-mode="environment" aria-pressed="false">环境</button>
+          </div>
+
+          <div class="diagram-stage">
+            <svg id="topology-diagram" viewBox="0 0 520 260" role="img" aria-label="Human 与 AI 直接交流：AI 本身成为直接交流对象。">
+              <defs>
+                <marker id="fallback-arrow" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M0 0L10 5L0 10z" fill="#718069"></path>
+                </marker>
+              </defs>
+              <path d="M189 128L331 128" class="diagram-edge is-ai" marker-start="url(#fallback-arrow)" marker-end="url(#fallback-arrow)"></path>
+              <g transform="translate(165 128)" class="node-human">
+                <circle class="outer" cx="0" cy="0" r="20"></circle><circle class="inner" cx="0" cy="0" r="4"></circle>
+                <text class="node-label" x="0" y="44" text-anchor="middle">Human</text>
+              </g>
+              <g transform="translate(355 128)" class="node-ai">
+                <rect x="-20" y="-20" width="40" height="40" rx="11"></rect><circle cx="0" cy="0" r="4"></circle>
+                <text class="node-label" x="0" y="44" text-anchor="middle">AI</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="specimen-footer">
+            <div class="structure-code" id="structure-code">Human ↔ AI</div>
+            <p id="structure-description">AI 本身成为直接交流对象。</p>
+          </div>
+
+          <div class="diagram-legend" aria-label="图例">
+            <span><i class="legend-human"></i>Human</span>
+            <span><i class="legend-ai"></i>AI</span>
+            <span><i class="legend-group"></i>Group</span>
+            <span><i class="legend-system"></i>System</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="index-strip" aria-label="项目原则">
-      <div class="shell index-strip-inner">
-        <p><b>01</b> 不预设 AI 的角色</p>
-        <p><b>02</b> 观察与解释分开</p>
-        <p><b>03</b> 从事件而不是观点开始</p>
-        <p><b>04</b> 分类可以被现实修正</p>
+    <section class="principle-band" aria-label="项目原则">
+      <div class="content-shell principle-inner">
+        <span class="principle-mark" aria-hidden="true">※</span>
+        <p>先有现象，后有判断；先有材料，后有理论。</p>
+        <span class="mono-note">OBSERVATION FIRST</span>
       </div>
     </section>
 
-    <section class="section shell" id="project">
-      <header class="section-rail">
-        <p class="section-no">01 · PROJECT</p>
-        <h2>项目</h2>
-      </header>
-
-      <div class="section-body project-copy">
-        <div class="lead-question">
-          <p class="micro">核心问题</p>
-          <p>当人工智能进入交流系统，交流的参与者、路径与意义正在发生什么变化？</p>
-        </div>
-
-        <div class="two-col-copy">
-          <p>
-            人工智能并不只有一种位置。它可以是写作工具、解释者、中介、代理、对话对象、
-            群体成员，也可能逐渐成为交流环境本身的一部分。
-          </p>
-          <p>
-            因此，FIELDNOTES 不把“人与 AI 对话”当作唯一研究对象。
-            我们观察所有 AI 参与其中的交流关系，以及这些关系如何改变人的行为与社会互动。
-          </p>
-        </div>
-
-        <div class="position-list" role="list">
-          <div role="listitem"><span>TOOL</span><p>帮助人完成表达、整理、翻译与生成。</p></div>
-          <div role="listitem"><span>MEDIATOR</span><p>过滤、解释或重构人与人之间的信息。</p></div>
-          <div role="listitem"><span>AGENT</span><p>代表某个人或组织参与交流与协商。</p></div>
-          <div role="listitem"><span>PARTICIPANT</span><p>作为交流对象或群体成员直接参与互动。</p></div>
-          <div role="listitem"><span>ENVIRONMENT</span><p>通过排序、推荐、总结与提示塑造交流条件。</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell" id="method">
-      <header class="section-rail">
-        <p class="section-no">02 · METHOD</p>
-        <h2>方法</h2>
-      </header>
-
-      <div class="section-body">
-        <div class="method-sequence" aria-label="观察、模式、解释三步方法">
-          <article>
-            <div class="method-top"><b>01</b><span>Observation</span></div>
-            <h3>观察</h3>
-            <p>记录一个具体交流事件：发生了什么、谁参与、AI 在哪里出现、留下了什么证据。</p>
-            <small>不补全动机，不提前判断。</small>
-          </article>
-
-          <article>
-            <div class="method-top"><b>02</b><span>Pattern</span></div>
-            <h3>模式</h3>
-            <p>当相似结构在多个独立案例中重复出现，才把它作为一种暂时的模式命名。</p>
-            <small>单一事件不等于模式。</small>
-          </article>
-
-          <article>
-            <div class="method-top"><b>03</b><span>Interpretation</span></div>
-            <h3>解释</h3>
-            <p>讨论模式可能意味着什么，并明确指出推断、局限与仍然未知的部分。</p>
-            <small>解释允许被新的观察推翻。</small>
-          </article>
-        </div>
-
-        <aside class="principle-note">
-          <p class="micro">基本原则</p>
+    <section class="content-section" id="observe">
+      <div class="content-shell">
+        <header class="section-heading">
           <div>
-            <p><strong>观察到的事实</strong>与<strong>我们对事实的解释</strong>必须分开。</p>
-            <p>
-              “用户连续修改了五次提示词”是观察；
-              “用户正在维护一种经过 AI 加工的自我形象”是解释。
-            </p>
+            <span class="section-index">01</span>
+            <p class="eyebrow">观察对象</p>
+          </div>
+          <h2>AI 没有一个固定的位置。</h2>
+          <p>
+            同一个系统，在不同交流中可能承担完全不同的角色。
+            FIELDNOTES 记录角色如何出现，而不是预先把 AI 塞进某一种定义。
+          </p>
+        </header>
+
+        <div class="role-board">
+          <article class="role-row">
+            <div class="role-icon role-icon--tool" aria-hidden="true">
+              <svg viewBox="0 0 44 44"><path d="M13 31 31 13M16 12h16v16"/></svg>
+            </div>
+            <div class="role-name">
+              <span class="role-code">R–01</span>
+              <h3>工具</h3>
+              <span class="role-en">TOOL</span>
+            </div>
+            <p>帮助人生成、整理、翻译或修改表达。</p>
+            <div class="role-path" aria-label="Human 到 AI">
+              <span class="mini-human"></span><i></i><span class="mini-ai"></span>
+            </div>
+          </article>
+
+          <article class="role-row">
+            <div class="role-icon role-icon--mediator" aria-hidden="true">
+              <svg viewBox="0 0 44 44"><circle cx="11" cy="22" r="4"/><circle cx="33" cy="22" r="4"/><path d="M15 22h14M22 15v14"/></svg>
+            </div>
+            <div class="role-name">
+              <span class="role-code">R–02</span>
+              <h3>中介</h3>
+              <span class="role-en">MEDIATOR</span>
+            </div>
+            <p>过滤、解释或重构人与人之间的信息。</p>
+            <div class="role-path" aria-label="Human 经 AI 到 Human">
+              <span class="mini-human"></span><i></i><span class="mini-ai"></span><i></i><span class="mini-human"></span>
+            </div>
+          </article>
+
+          <article class="role-row role-row--system">
+            <div class="role-icon role-icon--agent" aria-hidden="true">
+              <svg viewBox="0 0 44 44"><rect x="9" y="9" width="18" height="18" rx="6"/><path d="M22 22h13M30 17l5 5-5 5"/></svg>
+            </div>
+            <div class="role-name">
+              <span class="role-code">R–03</span>
+              <h3>代理</h3>
+              <span class="role-en">AGENT</span>
+            </div>
+            <p>代表某个人或组织参与沟通与协商。</p>
+            <div class="role-path" aria-label="Human 委托 AI 代理">
+              <span class="mini-human"></span><i></i><span class="mini-ai mini-ai--active"></span><i></i><span class="mini-group"></span>
+            </div>
+          </article>
+
+          <article class="role-row">
+            <div class="role-icon role-icon--participant" aria-hidden="true">
+              <svg viewBox="0 0 44 44"><circle cx="16" cy="22" r="7"/><rect x="24" y="15" width="14" height="14" rx="5"/><path d="M23 22h1"/></svg>
+            </div>
+            <div class="role-name">
+              <span class="role-code">R–04</span>
+              <h3>参与者</h3>
+              <span class="role-en">PARTICIPANT</span>
+            </div>
+            <p>作为交流对象或群体成员直接参与互动。</p>
+            <div class="role-path" aria-label="Human 与 AI 共同进入 Group">
+              <span class="mini-human"></span><i></i><span class="mini-ai"></span><i></i><span class="mini-group"></span>
+            </div>
+          </article>
+
+          <article class="role-row">
+            <div class="role-icon role-icon--environment" aria-hidden="true">
+              <svg viewBox="0 0 44 44"><rect x="8" y="10" width="28" height="24" rx="7"/><circle cx="16" cy="22" r="3"/><circle cx="28" cy="22" r="3"/><path d="M19 22h6"/></svg>
+            </div>
+            <div class="role-name">
+              <span class="role-code">R–05</span>
+              <h3>环境</h3>
+              <span class="role-en">ENVIRONMENT</span>
+            </div>
+            <p>通过排序、推荐、总结与提示塑造交流条件。</p>
+            <div class="role-path role-path--environment" aria-label="System 影响 Human 和 Group">
+              <span class="mini-system"></span><i></i><span class="mini-human"></span><i></i><span class="mini-group"></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section method-section" id="method">
+      <div class="content-shell">
+        <header class="section-heading section-heading--compact">
+          <div>
+            <span class="section-index">02</span>
+            <p class="eyebrow">方法</p>
+          </div>
+          <h2>从事件，到模式，再到解释。</h2>
+        </header>
+
+        <div class="method-board">
+          <article class="method-step">
+            <div class="step-head">
+              <span class="step-number">01</span>
+              <span class="step-symbol step-symbol--observation" aria-hidden="true"></span>
+            </div>
+            <p class="mono-label">OBSERVATION</p>
+            <h3>观察</h3>
+            <p>记录具体交流事件，以及证据能够直接支持的行为。</p>
+            <div class="step-foot">不补全动机</div>
+          </article>
+
+          <div class="method-connector" aria-hidden="true">
+            <svg viewBox="0 0 80 24"><path d="M2 12h70M64 5l8 7-8 7"/></svg>
+          </div>
+
+          <article class="method-step">
+            <div class="step-head">
+              <span class="step-number">02</span>
+              <span class="step-symbol step-symbol--pattern" aria-hidden="true"></span>
+            </div>
+            <p class="mono-label">PATTERN</p>
+            <h3>模式</h3>
+            <p>只有当相似结构在多个独立事件里重复出现，才暂时命名它。</p>
+            <div class="step-foot">单一事件 ≠ 模式</div>
+          </article>
+
+          <div class="method-connector" aria-hidden="true">
+            <svg viewBox="0 0 80 24"><path d="M2 12h70M64 5l8 7-8 7"/></svg>
+          </div>
+
+          <article class="method-step">
+            <div class="step-head">
+              <span class="step-number">03</span>
+              <span class="step-symbol step-symbol--interpretation" aria-hidden="true"></span>
+            </div>
+            <p class="mono-label">INTERPRETATION</p>
+            <h3>解释</h3>
+            <p>讨论模式可能意味着什么，并保留不确定性、局限与修订空间。</p>
+            <div class="step-foot">允许被新材料推翻</div>
+          </article>
+        </div>
+
+        <aside class="method-rule">
+          <span class="rule-bracket" aria-hidden="true">〔</span>
+          <div>
+            <p class="mono-label">BASIC RULE</p>
+            <p><strong>观察到的事实</strong>和<strong>我们对事实的解释</strong>在记录中始终分开。</p>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="section shell" id="scope">
-      <header class="section-rail">
-        <p class="section-no">03 · SCOPE</p>
-        <h2>观察范围</h2>
-      </header>
+    <section class="content-section note-section" id="field-note">
+      <div class="content-shell">
+        <header class="section-heading">
+          <div>
+            <span class="section-index">03</span>
+            <p class="eyebrow">记录结构</p>
+          </div>
+          <h2>一条 Field Note 应该像一个研究对象，而不是一篇博客。</h2>
+          <p>第一批已核查条目尚未发布。这里展示的是记录结构，不是假案例。</p>
+        </header>
 
-      <div class="section-body">
-        <p class="section-intro">
-          下面不是完整理论，而是目前用来描述交流结构的一组工作记号。
-          如果现实中出现新的关系，分类应该被修改，而不是让现实服从分类。
-        </p>
-
-        <div class="topology-table" role="table" aria-label="交流结构">
-          <div class="topology-row topology-head" role="row">
-            <span role="columnheader">CODE</span>
-            <span role="columnheader">TOPOLOGY</span>
-            <span role="columnheader">说明</span>
-          </div>
-          <div class="topology-row" role="row">
-            <span>T–01</span><code>Human ↔ Human</code><p>传统人际交流，可作为比较基线。</p>
-          </div>
-          <div class="topology-row" role="row">
-            <span>T–02</span><code>Human ↔ AI</code><p>AI 本身成为直接交流对象。</p>
-          </div>
-          <div class="topology-row" role="row">
-            <span>T–03</span><code>Human → AI → Human</code><p>AI 参与人与人之间的信息产生或解释。</p>
-          </div>
-          <div class="topology-row" role="row">
-            <span>T–04</span><code>Human → AI ↔ AI ← Human</code><p>多个代理代表不同的人进行交流。</p>
-          </div>
-          <div class="topology-row" role="row">
-            <span>T–05</span><code>Human + AI ↔ Group</code><p>AI 进入群体讨论并具有持续影响。</p>
-          </div>
-          <div class="topology-row" role="row">
-            <span>T–06</span><code>AI ↔ Environment ↔ Human</code><p>AI 通过平台机制塑造交流环境。</p>
-          </div>
-        </div>
-
-        <p class="revision-note">工作分类 / Working taxonomy · 将随观察持续修订</p>
-      </div>
-    </section>
-
-    <section class="section shell" id="fieldnotes">
-      <header class="section-rail">
-        <p class="section-no">04 · NOTES</p>
-        <h2>田野条目</h2>
-      </header>
-
-      <div class="section-body">
-        <div class="empty-state">
-          <p class="micro">条目结构</p>
-          <h3>第一批已核查观察尚未发布。</h3>
-          <p>
-            在真正案例完成核查之前，这里只展示档案结构，不使用虚构案例替代研究材料。
-          </p>
-        </div>
-
-        <div class="note-template">
-          <div class="note-header">
-            <div>
-              <span>FIELD NOTE</span>
-              <strong>#000</strong>
+        <div class="field-note-object">
+          <header class="note-object-header">
+            <div class="note-id">
+              <span class="note-glyph" aria-hidden="true"></span>
+              <div>
+                <p class="mono-label">FIELD NOTE</p>
+                <strong>#000</strong>
+              </div>
             </div>
-            <strong>尚未发布</strong>
+            <div class="note-status">
+              <span class="status-ring"></span>
+              <span>结构预览</span>
+              <small>UNPUBLISHED</small>
+            </div>
+          </header>
+
+          <div class="note-object-grid">
+            <dl class="note-meta">
+              <div>
+                <dt>日期</dt>
+                <dd>〔YYYY.MM.DD〕</dd>
+              </div>
+              <div>
+                <dt>语境</dt>
+                <dd>〔场景与目的〕</dd>
+              </div>
+              <div>
+                <dt>参与者</dt>
+                <dd>〔Human / AI / Group〕</dd>
+              </div>
+              <div>
+                <dt>AI 角色</dt>
+                <dd>〔Role〕</dd>
+              </div>
+              <div>
+                <dt>拓扑</dt>
+                <dd>〔Topology〕</dd>
+              </div>
+            </dl>
+
+            <div class="note-main">
+              <section class="note-block note-block--observation">
+                <header>
+                  <div class="block-title">
+                    <span class="observation-mark" aria-hidden="true"></span>
+                    <div>
+                      <p class="mono-label">OBSERVATION</p>
+                      <h3>观察到的行为</h3>
+                    </div>
+                  </div>
+                  <span class="block-rule">只写证据支持的内容</span>
+                </header>
+                <p class="placeholder-copy">〔记录可直接观察到的表达、动作、顺序、修改、回应与结果。〕</p>
+              </section>
+
+              <section class="note-block note-block--interpretation">
+                <header>
+                  <div class="block-title">
+                    <span class="interpretation-mark" aria-hidden="true">∿</span>
+                    <div>
+                      <p class="mono-label">INTERPRETATION</p>
+                      <h3>解释</h3>
+                    </div>
+                  </div>
+                  <span class="block-rule">允许长期空缺</span>
+                </header>
+                <p class="placeholder-copy">〔如果材料足够，再讨论这一事件可能意味着什么。〕</p>
+              </section>
+            </div>
+
+            <aside class="evidence-panel">
+              <header>
+                <div>
+                  <span class="evidence-glyph" aria-hidden="true"></span>
+                  <div>
+                    <p class="mono-label">EVIDENCE</p>
+                    <h3>证据</h3>
+                  </div>
+                </div>
+                <span class="evidence-state">PENDING</span>
+              </header>
+
+              <div class="evidence-slot">
+                <span>01</span>
+                <p>〔公开链接 / 截图 / 对话记录〕</p>
+              </div>
+              <div class="evidence-slot">
+                <span>02</span>
+                <p>〔第一手描述 / 访谈材料〕</p>
+              </div>
+
+              <p class="evidence-note">
+                Evidence 是条目的材料层，不等于对事件的解释。
+              </p>
+            </aside>
           </div>
-
-          <dl>
-            <div><dt>语境 <small>Context</small></dt><dd>〔事件发生在哪里，为了什么而发生〕</dd></div>
-            <div><dt>参与者 <small>Participants</small></dt><dd>〔人、AI、群体、组织，以及它们之间的关系〕</dd></div>
-            <div><dt>拓扑 <small>Topology</small></dt><dd>〔当前交流结构；不能归类时允许留空〕</dd></div>
-            <div><dt>证据 <small>Evidence</small></dt><dd>〔截图、公开链接、对话记录、访谈或其他材料〕</dd></div>
-            <div><dt>观察到的行为 <small>Observed behavior</small></dt><dd>〔只记录证据直接支持的行为〕</dd></div>
-            <div><dt>解释 <small>Interpretation</small></dt><dd>〔可以长期空缺；不得伪装成观察事实〕</dd></div>
-          </dl>
         </div>
       </div>
     </section>
 
-    <section class="section shell archive-section" id="archive">
-      <header class="section-rail">
-        <p class="section-no">05 · ARCHIVE</p>
-        <h2>将会出现什么</h2>
-      </header>
+    <section class="content-section archive-section" id="archive">
+      <div class="content-shell">
+        <header class="section-heading section-heading--compact">
+          <div>
+            <span class="section-index">04</span>
+            <p class="eyebrow">档案</p>
+          </div>
+          <h2>网站会随着观察材料生长。</h2>
+        </header>
 
-      <div class="section-body archive-list">
-        <article>
-          <span>01</span>
-          <h3>田野条目 <small>Field Notes</small></h3>
-          <p>单个、可追溯的交流事件，是整个项目最基础的材料层。</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>模式 <small>Patterns</small></h3>
-          <p>多个条目之间反复出现的行为与结构，并附支持它的事件编号。</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>关系图谱 <small>Maps</small></h3>
-          <p>整理不同参与者、AI 角色与交流拓扑之间的变化。</p>
-        </article>
-        <article>
-          <span>04</span>
-          <h3>分析 <small>Analysis</small></h3>
-          <p>建立在观察材料上的解释性文章，并保留重要修订记录。</p>
-        </article>
+        <div class="archive-grid">
+          <article class="archive-card">
+            <div class="archive-top">
+              <span class="archive-symbol archive-symbol--note" aria-hidden="true"></span>
+              <span class="archive-count">00</span>
+            </div>
+            <h3>田野条目</h3>
+            <p>单个、可追溯的交流事件。</p>
+            <span class="archive-en">FIELD NOTES</span>
+          </article>
+
+          <article class="archive-card">
+            <div class="archive-top">
+              <span class="archive-symbol archive-symbol--pattern" aria-hidden="true"></span>
+              <span class="archive-count">00</span>
+            </div>
+            <h3>模式</h3>
+            <p>多个事件之间重复出现的结构。</p>
+            <span class="archive-en">PATTERNS</span>
+          </article>
+
+          <article class="archive-card">
+            <div class="archive-top">
+              <span class="archive-symbol archive-symbol--map" aria-hidden="true"></span>
+              <span class="archive-count">00</span>
+            </div>
+            <h3>关系图谱</h3>
+            <p>参与者、角色与交流路径的变化。</p>
+            <span class="archive-en">MAPS</span>
+          </article>
+
+          <article class="archive-card">
+            <div class="archive-top">
+              <span class="archive-symbol archive-symbol--analysis" aria-hidden="true"></span>
+              <span class="archive-count">00</span>
+            </div>
+            <h3>分析</h3>
+            <p>建立在材料层之上的解释性文章。</p>
+            <span class="archive-en">ANALYSIS</span>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section shell" id="participate">
-      <header class="section-rail">
-        <p class="section-no">06 · PARTICIPATE</p>
-        <h2>参与</h2>
-      </header>
+    <section class="content-section participate-section" id="participate">
+      <div class="content-shell">
+        <div class="participate-panel">
+          <div class="participate-symbols" aria-hidden="true">
+            <span class="p-human"></span>
+            <i></i>
+            <span class="p-ai"></span>
+            <i></i>
+            <span class="p-group"></span>
+          </div>
+          <div class="participate-copy">
+            <p class="eyebrow">参与观察</p>
+            <h2>重要的交流变化，往往先发生在日常生活里。</h2>
+            <p>
+              未来可以提交公开链接、截图、可匿名处理的材料或第一人称描述。
+              投稿只会成为待核查材料，不会自动被视为事实。
+            </p>
+          </div>
+          <div class="participate-state">
+            <span class="mono-label">SUBMISSION</span>
+            <strong>尚未开放</strong>
 
-      <div class="section-body participate-grid">
-        <div>
-          <p class="section-intro">
-            交流变化并不只发生在实验室里。它正在办公室、学校、家庭、社区、游戏、
-            社交平台与各种自动化工作流中同时发生。
-          </p>
-          <p>
-            未来你可以提交公开链接、截图、可匿名处理的材料或第一人称描述。
-            投稿会被视为“待核查材料”，而不是自动成为研究事实。
-          </p>
-        </div>
-
-        <div class="participate-status">
-          <p class="micro">投稿</p>
-          <strong>投稿入口尚未开放</strong>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="shell footer-grid">
+    <div class="content-shell footer-inner">
       <div>
-        <strong>FIELDNOTES</strong>
+        <div class="footer-brand">FIELDNOTES</div>
         <p>人工智能时代的交流观察计划</p>
       </div>
-      <div>
+      <div class="footer-principle">
         <p>先观察，再解释。</p>
+        <span>Observation first. Interpretation later.</span>
       </div>
-      <div class="footer-meta">
-        <p>WIP</p>
-        <p>2026 —</p>
+      <div class="footer-links">
+        <a href="https://github.com/Lopution/fieldnotes" rel="noreferrer">GitHub</a>
+        <span>2026 —</span>
       </div>
     </div>
   </footer>
