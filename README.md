@@ -1,26 +1,19 @@
-# FIELDNOTES v1 prototype
+# FIELDNOTES
 
-A complete rewrite of the FIELDNOTES website.
+AI 与交流的独立观察计划。
 
-## Design direction
+FIELDNOTES 从具体的交流事件出发：保存材料，描述可观察行为，比较重复出现的结构，并把解释放在最后。
 
-- Research instrument × quiet interface × living archive
-- Chinese carries the reading flow; English is reserved for terminology and metadata
-- Warm bone / paper surfaces with semantic clay and moss accents
-- A custom visual grammar for Human / AI / Group / System / Evidence
-- Interactive communication-topology specimen in the hero
-- Field Notes are treated as research objects, not blog posts
+**Method**  
+Observation → Pattern → Interpretation
 
-## Files
+## Fieldnotes Club
 
-- `index.html`
-- `styles.css`
-- `script.js`
+**Fieldnotes Club** 是 FIELDNOTES 的社群层。活动、加入方式与运行机制将单独公布。
 
-## Preview
+## Maintainer
 
-Open `index.html`, or run a simple static server:
+**Lopution**  
+Contact: [fuyian533@gmail.com](mailto:fuyian533@gmail.com)
 
-```bash
-python3 -m http.server 8000
-```
+当前网站：v1.1
